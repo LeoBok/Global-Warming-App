@@ -1,6 +1,6 @@
 const Temperature = () => {
     return(
-        <div>I'm in Temperature comonent</div>
+        <div>I'm in Temperature component</div>
     )
 }
 
