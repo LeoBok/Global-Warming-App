@@ -1,0 +1,30 @@
+.Sidebar {
+    border-radius: 20px;
+
+    background: #606c88;
+    background: -webkit-linear-gradient(to right, #606c88, #3f4c6b);
+    background: linear-gradient(to right, #606c88, #3f4c6b);
+}
+
+.main-sidebar-content,
+.main-sidebar-content a,
+.sidebar-links a {
+    color: #FFFFFF;
+}
+
+.main-sidebar-content,
+.sidebar-links li {
+    text-align: center;
+}
+
+.main-sidebar-content img,
+.main-sidebar-content h3,
+.main-sidebar-content a,
+.sidebar-links li {
+    padding: 13px 0;
+}
+
+.sidebar-links {
+    background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
+    border-radius: 20px;
+}

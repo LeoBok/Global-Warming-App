@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const SidebarLinks = () => {
     return(
-        <ul>
+        <ul className="sidebar-links">
         {
             pageLinks.map(item => (
                 <li key={item.id}>

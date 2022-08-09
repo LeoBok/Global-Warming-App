@@ -2,12 +2,12 @@ import logo from '../../images/logo-app.png'
 import { BiHome } from 'react-icons/bi'
 import SidebarLinks from './SidebarLinks';
 import { Link } from 'react-router-dom'
-
+import './Sidebar.css'
 
 const Sidebar = () => {
     return(
-        <>
-            <div>
+        <div className='Sidebar'>
+            <div className='main-sidebar-content'>
                 <img
                     src={logo}
                     alt='logo app'
@@ -21,7 +21,7 @@ const Sidebar = () => {
             </div>
 
             <SidebarLinks />
-        </>
+        </div>
     )
 }
 
