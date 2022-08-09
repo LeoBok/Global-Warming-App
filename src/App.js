@@ -1,12 +1,12 @@
 import './App.css';
 import Main from './components/Main/Main'
-import Temperature from './components/Temperature/Temperature'
+import TemperatureAnomalies from './components/Temperature anomalies/Temperature-anomalies'
 import Sidebar from './components/Sidebar/Sidebar'
 import { HashRouter, Routes, Route } from "react-router-dom";
 import CarbonDioxide from './components/Carbon Dioxide/Carbon-dioxide';
 import Methan from './components/Methan/Methan';
 import NitrousOxide from './components/Nitrous Oxide/Nitrous-Oxide';
-import PolarIce from './components/Polar Ice/Polar-ice';
+import PolarCapsMelting from './components/Polar Caps Melting/Polar-caps-melting';
 
 function App() {
     return (
@@ -16,11 +16,11 @@ function App() {
 
             <Routes>
               <Route path='/' element={<Main />}/>
-              <Route path='/temperature' element={<Temperature />} />
+              <Route path='/temperature' element={<TemperatureAnomalies />} />
               <Route path='/carbon-dioxide' element={<CarbonDioxide />} />
               <Route path='/methan' element={<Methan />} />
               <Route path='/nitrous-oxide' element={<NitrousOxide />} />
-              <Route path='/polar-ice' element={<PolarIce />} />
+              <Route path='/polar-caps-melting' element={<PolarCapsMelting />} />
             </Routes>
           </div>
       </HashRouter>
