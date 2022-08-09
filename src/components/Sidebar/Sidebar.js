@@ -5,22 +5,19 @@ import { Link } from 'react-router-dom'
 
 
 const Sidebar = () => {
-
-    const sidebarArr = [];
-    const appLogo = <img
-        src={logo}
-        alt='logo app'
-    />;
-    const appTitle = <h3>Global Warming App</h3>;
-    const sidebarIcon = <Link to='/'>
-        <BiHome />
-    </Link>;
-    sidebarArr.push(appLogo, appTitle, sidebarIcon)
-
     return(
         <>
             <div>
-                {sidebarArr}
+                <img
+                    src={logo}
+                    alt='logo app'
+                />
+
+                <h3>Global Warming App</h3>
+
+                <Link to='/'>
+                    <BiHome />
+                </Link>
             </div>
 
             <SidebarLinks />
