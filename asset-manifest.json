@@ -1,13 +1,14 @@
 {
   "files": {
     "main.css": "/global-warming-app/static/css/main.754ebb54.css",
-    "main.js": "/global-warming-app/static/js/main.a52814c9.js",
+    "main.js": "/global-warming-app/static/js/main.b9a7de09.js",
+    "static/media/stats.png": "/global-warming-app/static/media/stats.937f6e5709223bef962f.png",
     "index.html": "/global-warming-app/index.html",
     "main.754ebb54.css.map": "/global-warming-app/static/css/main.754ebb54.css.map",
-    "main.a52814c9.js.map": "/global-warming-app/static/js/main.a52814c9.js.map"
+    "main.b9a7de09.js.map": "/global-warming-app/static/js/main.b9a7de09.js.map"
   },
   "entrypoints": [
     "static/css/main.754ebb54.css",
-    "static/js/main.a52814c9.js"
+    "static/js/main.b9a7de09.js"
   ]
 }
