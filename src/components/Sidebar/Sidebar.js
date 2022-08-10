@@ -16,7 +16,7 @@ const Sidebar = () => {
                 <h3>Global Warming App</h3>
 
                 <Link to='/'>
-                    <BiHome />
+                    <BiHome className='sidebar-icon'/>
                 </Link>
             </div>
 

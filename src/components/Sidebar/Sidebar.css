@@ -17,13 +17,6 @@
     text-align: center;
 }
 
-.main-sidebar-content img,
-.main-sidebar-content h3,
-.main-sidebar-content a,
-.sidebar-links li {
-    padding: 13px 0;
-}
-
 .sidebar-links {
     background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
     border-radius: 20px;

@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;600&display=swap');
 
-body  {
+body{
     font-family: 'Archivo', sans-serif;
     letter-spacing: 2px;
 }
@@ -37,3 +37,20 @@ a {
     border-radius: 20px;
 }
 
+@media only screen and (max-width: 600px) {
+  .App {
+    margin: 5px;
+  }
+  .main-sidebar-content {
+    padding-bottom: 20px;
+  }
+  .main-sidebar-content img,
+  .main-sidebar-content h3,
+  .main-sidebar-content a,
+  .sidebar-links li {
+    padding: 13px 0;
+  }
+  .sidebar-icon {
+    font-size: 23px;
+  }
+}
