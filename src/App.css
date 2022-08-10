@@ -62,9 +62,11 @@ a {
   .sidebar-icon {
     font-size: 23px;
   }
+  .home {
+    padding: 20px;
+  }
   .intro {
     max-width: 550px;
-    padding: 25px 20px;
     line-height: 25px;
   }
   .items-container {
