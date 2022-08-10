@@ -42,7 +42,10 @@ a {
     margin: 5px;
   }
   .main-sidebar-content {
-    padding-bottom: 20px;
+    padding-bottom: 15px;
+  }
+  .main-sidebar-content h3 {
+    font-size: 18px;
   }
   .main-sidebar-content img,
   .main-sidebar-content h3,
@@ -50,7 +53,30 @@ a {
   .sidebar-links li {
     padding: 13px 0;
   }
+  .sidebar-links {
+    padding: 15px 0;
+  }
+  .sidebar-links a {
+    font-size: 16px;
+  }
   .sidebar-icon {
     font-size: 23px;
+  }
+  .intro {
+    max-width: 550px;
+    padding: 25px 20px;
+    line-height: 25px;
+  }
+  .items-container {
+    padding: 0 0 10px 0;
+  }
+  .single-item {
+    padding: 20px 0;
+    max-width: 450px;
+    margin: 30px auto;
+  }
+  .graph-img {
+    max-width: 150px;
+    padding: 20px 0;
   }
 }

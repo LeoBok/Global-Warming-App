@@ -4,12 +4,13 @@ import stats from '../../images/stats.png'
 
 const MainLinks = () => {
     return(
-        <ul>
+        <ul className="items-container">
             {
                 pageLinks.map(item => (
-                    <li key={item.id}>
+                    <li key={item.id} className='single-item'>
                         <h3>{item.title}</h3>
                         <img
+                            className="graph-img"
                             src={stats}
                             alt='stats img'
                         />

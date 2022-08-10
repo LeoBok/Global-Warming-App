@@ -1,9 +1,10 @@
 import MainLinks from "./MainLinks"
+import './Main.css'
 
 const Main = () => {
     return(
-        <main>
-            <p>
+        <main className="home">
+            <p className='intro'>
                 In recent years, we have witnessed a rather worrying climate changes.
                 This is the reason why we need to be careful and take care of our Earth.
                 So I thought, it would be nice to have an app which you can monitor
