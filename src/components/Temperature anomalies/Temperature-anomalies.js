@@ -36,7 +36,7 @@ const TemperatureAnomalies = () => {
             { temperatureAnomalies && (
                 <div className='container'>
                     <div className="graph-container">
-                        { lastElement && <p className="value-text">Last value: <span className="element-data">{lastElement.data}</span></p> }
+                        { lastElement && <p className="value-text">Today's value: <span className="element-data">{lastElement.data}</span></p> }
 
                         <ResponsiveContainer width='100%' aspect={2}>
                             <LineChart
@@ -53,9 +53,9 @@ const TemperatureAnomalies = () => {
                     </div>
 
                     <p className="description">
-                        L'aumento della temperatura globale media totale dalla rivoluzione industriale è di circa (1,0 °C / 1,8 °F).
-                        L'emisfero settentrionale della Terra si sta riscaldando più velocemente.
-                        L'Artico si è riscaldato tra (2 °C / 3,6 °F) e (4 °C / 7,2 °F).
+                        Since the industrial revolution, the average increase of global temperature is about
+                        1,0° C (1,0° F).<br/>
+                        The northern hemisphere of the Earth is warming faster. The Arctic warmed between 2° C (3.6° F) and 4° C (7.2° F).
                     </p>
                 </div>
             )}
