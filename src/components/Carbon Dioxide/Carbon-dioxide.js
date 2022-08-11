@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis, Legend } from "recharts";
 import useFetch from '../useFetch';
+import '../Component.css'
 
 const CarbonDioxide = () => {
 
