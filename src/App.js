@@ -16,7 +16,7 @@ function App() {
 
             <Routes>
               <Route path='/' element={<Main />}/>
-              <Route path='/temperature' element={<TemperatureAnomalies />} />
+              <Route path='/temperature-anomalies' element={<TemperatureAnomalies />} />
               <Route path='/carbon-dioxide' element={<CarbonDioxide />} />
               <Route path='/methan' element={<Methan />} />
               <Route path='/nitrous-oxide' element={<NitrousOxide />} />
