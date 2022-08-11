@@ -95,6 +95,7 @@ a {
     padding: 15px 0;
   }
   .description {
+    line-height: 22px;
     padding: 30px 0;
   }
 }

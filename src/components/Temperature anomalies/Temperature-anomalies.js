@@ -53,9 +53,9 @@ const TemperatureAnomalies = () => {
                     </div>
 
                     <p className="description">
-                        Since the industrial revolution, the average increase of global temperature is about
-                        1,0° C (1,0° F).<br/>
-                        The northern hemisphere of the Earth is warming faster. The Arctic warmed between 2° C (3.6° F) and 4° C (7.2° F).
+                        Since the industrial revolution, the average increase of global temperature is <span className="highlight-text">about
+                        1,0° C (1,8° F)</span>.<br/>
+                        The northern hemisphere of the Earth is warming faster. The Arctic warmed <span className="highlight-text">between 2° C (3.6° F) and 4° C (7.2° F)</span>.
                     </p>
                 </div>
             )}
