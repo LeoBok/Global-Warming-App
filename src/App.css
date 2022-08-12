@@ -244,12 +244,9 @@ a {
 
 @media only screen and (min-width: 1200px) {
   .App {
-    display: block;
+    margin: 0 20px;
   }
   #root {
     margin: 25px auto;
-  }
-  .App {
-    margin: 0 20px;
   }
 }
