@@ -191,10 +191,16 @@ a {
 }
 
 @media only screen and (min-width: 992px) {
+  body {
+    width: 100%;
+  }
+  #root {
+    margin: 10px auto;
+  }
   .App {
     display: grid;
     grid-template-columns: 0.3fr 1fr;
-    margin: 20px;
+    margin: 0 20px;
   }
   .Sidebar {
     display: flex;
@@ -233,5 +239,11 @@ a {
   }
   .single-item img {
     max-width: 100px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .App {
+    display: block;
   }
 }
