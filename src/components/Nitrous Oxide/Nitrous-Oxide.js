@@ -56,8 +56,7 @@ const NitrousOxide = () => {
                         </div>
                         <p className="description">
                             Nitrous oxide is a gas that is produced by the combustion of fossil fuel and solid waste, nitrogen-base fertilizers, sewage treatment plants, 
-                            natural processes, and other agricultural and industrial activities.se di azoto, impianti di trattamento delle acque reflue, processi naturali 
-                            e altre attività agricole e industriali.
+                            natural processes, and other agricultural and industrial activities.
                             It is the <span className="highlight-text">third largest heat-trapping gas</span> in the atmosphere and
                             the <span className="highlight-text">biggest ozone-destroying compound</span> emitted by human activities.
                         </p>

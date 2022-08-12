@@ -15,7 +15,7 @@ const MainLinks = () => {
                             alt='stats img'
                         />
                         <Link to={item.path}>
-                            <button>See graph</button>
+                            <button className="item-button">See graph</button>
                         </Link>
                     </li>
                 ))
