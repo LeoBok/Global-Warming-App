@@ -16,3 +16,23 @@
 ![Home Page](src/images/home-screenshot.png "Home Page")
 
 ![Single Component Exaple](src/images/secondary-screenshot.png "Single Component Example")
+
+
+## ⚙ Built With
+
+- JavaScript
+- Node
+- NPM
+- HTML
+- CSS
+- React
+- React Router
+- Axios
+
+## 👨🏻‍💻 Author
+
+**Leonardo Boccali**
+
+- [Profile](https://github.com/LeoBok/ "Leonardo Boccali")
+- [Email](mailto:leonardoboccali19@gmail.com?subject=Hi "Hi!")
+- [Website](https://leobok.github.io/my-portfolio/ "Welcome")
