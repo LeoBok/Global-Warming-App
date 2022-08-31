@@ -1,5 +1,6 @@
 import MainLinks from "./MainLinks"
 import './Main.css'
+import { pageLinks } from "../pageLinks"
 
 const Main = () => {
     return(
@@ -13,7 +14,7 @@ const Main = () => {
                 nitrous oxide levels and polar ice caps.
             </p>
 
-            <MainLinks />
+            <MainLinks items={pageLinks} />
         </main>
     )
 }

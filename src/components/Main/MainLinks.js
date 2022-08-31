@@ -1,12 +1,11 @@
 import { Link } from "react-router-dom"
-import { pageLinks } from "../pageLinks"
 import stats from '../../images/stats.png'
 
-const MainLinks = () => {
+const MainLinks = ({ items }) => {
     return(
         <ul className="items-container">
             {
-                pageLinks.map(item => (
+                items.map(item => (
                     <li key={item.id} className='single-item'>
                         <h3>{item.title}</h3>
                         <img
@@ -15,7 +14,7 @@ const MainLinks = () => {
                             alt='stats img'
                         />
                         <Link to={item.path}>
-                            <button className="item-button">See graph</button>
+                            <button className="item-button">{item.buttonTxt}</button>
                         </Link>
                     </li>
                 ))

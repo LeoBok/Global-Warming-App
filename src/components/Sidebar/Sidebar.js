@@ -3,6 +3,7 @@ import { BiHome } from 'react-icons/bi'
 import SidebarLinks from './SidebarLinks';
 import { Link } from 'react-router-dom'
 import './Sidebar.css'
+import { pageLinks } from '../pageLinks';
 
 const Sidebar = () => {
     return(
@@ -20,7 +21,7 @@ const Sidebar = () => {
                 </Link>
             </div>
 
-            <SidebarLinks />
+            <SidebarLinks items={pageLinks} />
         </div>
     )
 }
