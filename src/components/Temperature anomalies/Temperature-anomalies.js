@@ -1,11 +1,16 @@
+import Axios from "axios"
+import { useQuery } from "@tanstack/react-query"
 import { useEffect, useState } from "react";
 import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis, Legend } from "recharts";
-import useFetch from "../useFetch"
 import '../Component.css'
+import Chart from '../Chart'
 
 const TemperatureAnomalies = () => {
-
-    const { data, loading, error } = useFetch('https://global-warming.org/api/temperature-api');
+    const fetchData = () => {
+        return Axios.get('https://global-warming.org/api/temperature-api').then(res => res.data)
+    }
+    const { data } = useQuery(['temperatureVar'], fetchData)
+    
     const indexItems = [0, 800, 973, 980, 990, 1000, 1025, 1050, 1110, 1200, 1400, 1444, 1600, 1654, 1700];
     const [lastElement, setLastElement] = useState({});
     const [ temperatureAnomalies, setTemperatureAnomalies ] = useState([]);
@@ -22,34 +27,27 @@ const TemperatureAnomalies = () => {
             setTemperatureAnomalies(mappedData);
         }
     }, [data]);
-
+    
     useEffect(() => {
         const lastItem = temperatureAnomalies[temperatureAnomalies.length - 1];
         setLastElement(lastItem);
     });
+
     return(
         <>
-            { loading && <p></p>}
-                
-            { error && <p>{error.message}</p> }
-
-            { temperatureAnomalies && (
+        {
+            temperatureAnomalies && (
                 <div className='container'>
                     <div className="graph-container">
                         { lastElement && <p className="value-text">Today's value: <span className="element-data">{lastElement.data}</span></p> }
 
-                        <ResponsiveContainer width='100%' aspect={2}>
-                            <LineChart
-                                data={temperatureAnomalies}
-                                margin={{ right: 30, left: 30 }}
-                            >
-                                <XAxis dataKey='time' />
-                                <YAxis />
-                                <Tooltip />
-                                <Legend verticalAlign="top" height={36}/>
-                                <Line name="temperature variation" dot={{ stroke: '#F37D3A', strokeWidth: 1 }} activeDot={{ stroke: '', strokeWidth: 1, r: 3 }} type='linear' dataKey="data" stroke="#01A2B0" />
-                            </LineChart>
-                        </ResponsiveContainer>
+                        <Chart
+                            chardData={temperatureAnomalies} 
+                            time={temperatureAnomalies.time}
+                            lineName='temperature variation'
+                            lineData={temperatureAnomalies.data}
+                        />
+
                     </div>
 
                     <p className="description">
@@ -58,7 +56,8 @@ const TemperatureAnomalies = () => {
                         The northern hemisphere of the Earth is warming faster. The Arctic warmed <span className="highlight-text">between 2° C (3.6° F) and 4° C (7.2° F)</span>.
                     </p>
                 </div>
-            )}
+            )
+        }
         </>
     )
 }
