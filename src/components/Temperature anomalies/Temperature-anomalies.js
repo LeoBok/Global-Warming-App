@@ -3,6 +3,7 @@ import { useQuery } from "@tanstack/react-query"
 import { useEffect, useState } from "react";
 import '../Component.css'
 import Chart from '../Chart'
+import CurrentValue from "../CurrentValue";
 
 const TemperatureAnomalies = () => {
     const fetchData = () => {
@@ -11,7 +12,7 @@ const TemperatureAnomalies = () => {
     const { data } = useQuery(['temperatureVar'], fetchData)
     
     const indexItems = [0, 800, 973, 980, 990, 1000, 1025, 1050, 1110, 1200, 1400, 1444, 1600, 1654, 1700];
-    const [lastElement, setLastElement] = useState({});
+    const [lastElement, setLastElement] = useState('');
     const [ temperatureAnomalies, setTemperatureAnomalies ] = useState([]);
 
     useEffect(() => {
@@ -26,10 +27,10 @@ const TemperatureAnomalies = () => {
             setTemperatureAnomalies(mappedData);
         }
     }, [data]);
-    
+
     useEffect(() => {
         const lastItem = temperatureAnomalies[temperatureAnomalies.length - 1];
-        setLastElement(lastItem);
+        setLastElement(lastItem?.data);
     });
 
     return(
@@ -38,7 +39,7 @@ const TemperatureAnomalies = () => {
             temperatureAnomalies && (
                 <div className='container'>
                     <div className="graph-container">
-                        { lastElement && <p className="value-text">Today's value: <span className="element-data">{lastElement.data}</span></p> }
+                        <CurrentValue currentValue={lastElement} />
 
                         <Chart
                             chartData={temperatureAnomalies}

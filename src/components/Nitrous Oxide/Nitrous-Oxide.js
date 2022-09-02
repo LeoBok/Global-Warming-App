@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import Axios from "axios";
 import { useEffect, useState } from "react";
 import Chart from "../Chart";
+import CurrentValue from "../CurrentValue";
 
 const NitrousOxide = () => {
 
@@ -11,7 +12,7 @@ const NitrousOxide = () => {
     const { data } = useQuery( ['nitorousOxide'], fetchData);
     const [nitrousOxide, setNitrousOxide] = useState([]);
     const indexItem = [0, 10, 20, 30, 40, 50, 60, 70, 100, 130, 170, 200, 230, 250];
-    const [lastElement, setLastElement] = useState({});
+    const [lastElement, setLastElement] = useState('');
 
     useEffect(() => {
 
@@ -29,7 +30,7 @@ const NitrousOxide = () => {
 
     useEffect(() => {
         const lastItem = nitrousOxide[nitrousOxide.length - 1];
-        setLastElement(lastItem);
+        setLastElement(lastItem?.data);
     })
 
     return(
@@ -39,7 +40,7 @@ const NitrousOxide = () => {
                     <div className="container">
                         <div className="graph-container">
 
-                            { lastElement && <p className="value-text">Today's value: <span className="element-data">{lastElement.data}</span></p> }
+                            <CurrentValue currentValue={lastElement} />
 
                             <Chart
                                 chartData={nitrousOxide}

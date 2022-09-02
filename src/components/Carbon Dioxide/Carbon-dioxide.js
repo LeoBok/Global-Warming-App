@@ -3,6 +3,7 @@ import '../Component.css'
 import Chart from "../Chart";
 import { useQuery } from "@tanstack/react-query";
 import Axios from "axios";
+import CurrentValue from "../CurrentValue";
 
 const CarbonDioxide = () => {
 
@@ -12,7 +13,7 @@ const CarbonDioxide = () => {
     const { data } = useQuery(['carbonDioxide'], fetchData);
     
     const [carbonDioxide, setCarbonDioxide] = useState([]);
-    const [lastElement, setLastElement] = useState({});
+    const [lastElement, setLastElement] = useState('');
     const indexItem = [0, 400, 800, 1200, 1500, 1900, 2200, 2600, 2900, 3400, 3800];
 
     useEffect(() => {
@@ -30,7 +31,7 @@ const CarbonDioxide = () => {
 
     useEffect(() => {
         const lastItem = carbonDioxide[carbonDioxide.length - 1];
-        setLastElement(lastItem);
+        setLastElement(lastItem?.data);
     })
     return(
         <>
@@ -39,7 +40,7 @@ const CarbonDioxide = () => {
                     <div className="container">
                         <div className="graph-container">
 
-                            { lastElement && <p className="value-text">Today's value: <span className="element-data">{lastElement.data}</span></p> }
+                            <CurrentValue currentValue={lastElement} />
 
                             <Chart
                                 chartData={carbonDioxide}

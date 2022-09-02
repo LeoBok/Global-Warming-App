@@ -3,6 +3,7 @@ import '../Component.css'
 import Axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 import Chart from "../Chart";
+import CurrentValue from "../CurrentValue";
 
 const Methan = () => {
 
@@ -12,7 +13,7 @@ const Methan = () => {
     const { data } = useQuery(['methan'], fetchData);
 
     const indexItem = [0, 50, 100, 150, 200, 250, 300, 350, 400, 450];
-    const [lastElement, setLastElement] = useState({});
+    const [lastElement, setLastElement] = useState('');
     const [ methanLevels, setMethanLevels ] = useState([]);
 
     useEffect(() => {
@@ -32,7 +33,7 @@ const Methan = () => {
 
     useEffect(() => {
         const lastItem = methanLevels[methanLevels.length - 1];
-        setLastElement(lastItem);
+        setLastElement(lastItem?.data);
     })
 
     return(
@@ -42,8 +43,8 @@ const Methan = () => {
                     <div className="container">
                         <div className="graph-container">
 
-                            { lastElement && <p className="value-text">Today's value: <span className="element-data">{lastElement.data}</span></p> }
-                            
+                            <CurrentValue currentValue={lastElement} />
+
                             <Chart
                                 chartData={methanLevels}
                                 lineName='Methan'
