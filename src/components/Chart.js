@@ -1,13 +1,13 @@
 import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis, Legend } from "recharts";
 
-const Chart = ({ chardData, time, lineName, lineData }) => {
+const Chart = ({ chartData, lineName }) => {
   return (
     <ResponsiveContainer width='100%' aspect={2}>
         <LineChart
-        data={chardData}
+        data={chartData}
         margin={{ right: 30, left: 30 }}
         >
-          <XAxis dataKey='time' />
+          <XAxis dataKey='year' />
           <YAxis />
           <Tooltip />
           <Legend verticalAlign="top" height={36}/>

@@ -1,11 +1,16 @@
 import { useEffect, useState } from "react";
-import useFetch from "../useFetch";
-import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis, Legend } from "recharts";
 import '../Component.css'
+import Axios from "axios";
+import { useQuery } from "@tanstack/react-query";
+import Chart from "../Chart";
 
 const Methan = () => {
 
-    const { data, loading, error } = useFetch('https://global-warming.org/api/methane-api');
+    const fetchData = () => {
+        return Axios.get('https://global-warming.org/api/methane-api').then(res => res.data)
+    }
+    const { data } = useQuery(['methan'], fetchData);
+
     const indexItem = [0, 50, 100, 150, 200, 250, 300, 350, 400, 450];
     const [lastElement, setLastElement] = useState({});
     const [ methanLevels, setMethanLevels ] = useState([]);
@@ -13,7 +18,7 @@ const Methan = () => {
     useEffect(() => {
         if (data) {
             const filteredData = data.methane.filter((_item, index) => indexItem.includes(index));
-            
+
             const mappedData = filteredData.map(item => {
                 return {
                     year: item.date.slice(0, 4),
@@ -32,29 +37,18 @@ const Methan = () => {
 
     return(
         <>
-            { loading && <p>LOADING...</p> }
-            
-            { error && <p>{error.message}</p> }
-
             { 
                 methanLevels && (
                     <div className="container">
                         <div className="graph-container">
-                            
-                            { lastElement && <p className="value-text">Today's value: <span className="element-data">{lastElement.data}</span></p> }
 
-                            <ResponsiveContainer width='100%' aspect={2}>
-                                <LineChart
-                                    data={methanLevels}
-                                    margin={{ right: 30, left: 30 }}
-                                >
-                                    <XAxis dataKey='year' />
-                                    <YAxis />
-                                    <Tooltip />
-                                    <Legend verticalAlign="top" height={36}/>
-                                    <Line name="Methan" dot={{ stroke: '#F37D3A', strokeWidth: 1 }} activeDot={{ stroke: '', strokeWidth: 1, r: 3 }} type='linear' dataKey="data" stroke="#01A2B0" />
-                                </LineChart>
-                            </ResponsiveContainer>
+                            { lastElement && <p className="value-text">Today's value: <span className="element-data">{lastElement.data}</span></p> }
+                            
+                            <Chart
+                                chartData={methanLevels}
+                                lineName='Methan'
+                            />
+
                         </div>
                         
                         <p className="description">

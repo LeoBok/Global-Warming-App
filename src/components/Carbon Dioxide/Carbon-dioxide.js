@@ -1,11 +1,16 @@
 import { useState, useEffect } from "react";
-import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis, Legend } from "recharts";
-import useFetch from '../useFetch';
 import '../Component.css'
+import Chart from "../Chart";
+import { useQuery } from "@tanstack/react-query";
+import Axios from "axios";
 
 const CarbonDioxide = () => {
 
-    const { data, loading, error } = useFetch('https://global-warming.org/api/co2-api');
+    const fetchData = () => {
+        return Axios.get('https://global-warming.org/api/co2-api').then(res => res.data)
+    }
+    const { data } = useQuery(['carbonDioxide'], fetchData);
+    
     const [carbonDioxide, setCarbonDioxide] = useState([]);
     const [lastElement, setLastElement] = useState({});
     const indexItem = [0, 400, 800, 1200, 1500, 1900, 2200, 2600, 2900, 3400, 3800];
@@ -29,10 +34,6 @@ const CarbonDioxide = () => {
     })
     return(
         <>
-            { loading && <p>LOADING...</p> }
-            
-            { error && <p>{error.message}</p> }
-
             {
                 carbonDioxide && (
                     <div className="container">
@@ -40,18 +41,11 @@ const CarbonDioxide = () => {
 
                             { lastElement && <p className="value-text">Today's value: <span className="element-data">{lastElement.data}</span></p> }
 
-                            <ResponsiveContainer width='100%' aspect={2}>
-                                <LineChart
-                                    data={carbonDioxide}
-                                    margin={{ right: 30, left: 30 }}
-                                >
-                                    <XAxis dataKey='year' />
-                                    <YAxis />
-                                    <Tooltip />
-                                    <Legend verticalAlign="top" height={36}/>
-                                    <Line name="Carbon Dioxide" dot={{ stroke: '#F37D3A', strokeWidth: 1 }} activeDot={{ stroke: '', strokeWidth: 1, r: 3 }} type='linear' dataKey="data" stroke="#01A2B0" />
-                                </LineChart>
-                            </ResponsiveContainer>
+                            <Chart
+                                chartData={carbonDioxide}
+                                lineName='Carbon Dioxide'
+                            />
+
                         </div>
 
                         <p className="description">

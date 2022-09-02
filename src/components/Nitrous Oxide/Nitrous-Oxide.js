@@ -1,10 +1,14 @@
+import { useQuery } from "@tanstack/react-query";
+import Axios from "axios";
 import { useEffect, useState } from "react";
-import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis, Legend } from "recharts";
-import useFetch from "../useFetch";
+import Chart from "../Chart";
 
 const NitrousOxide = () => {
 
-    const { data, loading, error } = useFetch('https://global-warming.org/api/nitrous-oxide-api');
+    const fetchData = () => {
+        return Axios.get('https://global-warming.org/api/nitrous-oxide-api').then(res => res.data)
+    }
+    const { data } = useQuery( ['nitorousOxide'], fetchData);
     const [nitrousOxide, setNitrousOxide] = useState([]);
     const indexItem = [0, 10, 20, 30, 40, 50, 60, 70, 100, 130, 170, 200, 230, 250];
     const [lastElement, setLastElement] = useState({});
@@ -30,10 +34,6 @@ const NitrousOxide = () => {
 
     return(
         <>
-            { loading && <p>LOADING...</p> }
-            
-            { error && <p>{error.message}</p> }
-            
             { 
                 nitrousOxide && (
                     <div className="container">
@@ -41,18 +41,10 @@ const NitrousOxide = () => {
 
                             { lastElement && <p className="value-text">Today's value: <span className="element-data">{lastElement.data}</span></p> }
 
-                            <ResponsiveContainer width='100%' aspect={2}>
-                                <LineChart
-                                    data={nitrousOxide}
-                                    margin={{ right: 30, left: 30 }}
-                                >
-                                    <XAxis dataKey='year' />
-                                    <YAxis />
-                                    <Tooltip />
-                                    <Legend verticalAlign="top" height={36}/>
-                                    <Line name="Nitrous Oxide" dot={{ stroke: '#F37D3A', strokeWidth: 1 }} activeDot={{ stroke: '#F37D3A', strokeWidth: 1, r: 3 }} type='linear' dataKey="data" stroke="#01A2B0" />
-                                </LineChart>
-                            </ResponsiveContainer>
+                            <Chart
+                                chartData={nitrousOxide}
+                                lineName='Nitrous Oxide'
+                            />
                         </div>
                         <p className="description">
                             Nitrous oxide is a gas that is produced by the combustion of fossil fuel and solid waste, nitrogen-base fertilizers, sewage treatment plants, 

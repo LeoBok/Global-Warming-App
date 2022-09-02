@@ -1,7 +1,6 @@
 import Axios from "axios"
 import { useQuery } from "@tanstack/react-query"
 import { useEffect, useState } from "react";
-import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis, Legend } from "recharts";
 import '../Component.css'
 import Chart from '../Chart'
 
@@ -20,7 +19,7 @@ const TemperatureAnomalies = () => {
             const filteredData = data.result.filter((_item, index) => indexItems.includes(index));
             const mappedData = filteredData.map(item => {
                 return {
-                    time: item.time.slice(0, 4),
+                    year: item.time.slice(0, 4),
                     data: item.station
                 }
             });
@@ -42,10 +41,8 @@ const TemperatureAnomalies = () => {
                         { lastElement && <p className="value-text">Today's value: <span className="element-data">{lastElement.data}</span></p> }
 
                         <Chart
-                            chardData={temperatureAnomalies} 
-                            time={temperatureAnomalies.time}
+                            chartData={temperatureAnomalies}
                             lineName='temperature variation'
-                            lineData={temperatureAnomalies.data}
                         />
 
                     </div>
