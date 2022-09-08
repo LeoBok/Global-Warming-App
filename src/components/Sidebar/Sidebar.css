@@ -1,14 +1,11 @@
 .Sidebar {
-    border-radius: 20px;
-
     background: #606c88;
     background: -webkit-linear-gradient(to right, #606c88, #3f4c6b);
     background: linear-gradient(to right, #606c88, #3f4c6b);
 }
 
 .main-sidebar-content,
-.main-sidebar-content a,
-.sidebar-links a {
+.main-sidebar-content a {
     color: #FFFFFF;
 }
 
@@ -19,5 +16,25 @@
 
 .sidebar-links {
     background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
-    border-radius: 20px;
+}
+
+.sidebar-icon {
+    font-size: 20px;
+}
+
+.lactive-class:hover {
+    color: #01ABB9;
+}
+
+.lactive-class {
+    background-color: #FFFFFF;
+    color:  #01ABB9;
+}
+
+.not-active-class {
+    color: #FFFFFF;
+}
+
+.not-active-class:hover {
+    color: #FFFFFF;
 }

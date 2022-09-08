@@ -1,15 +1,15 @@
-import { pageLinks } from "../pageLinks"
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 const SidebarLinks = ({ items }) => {
     return(
-        <ul className="sidebar-links">
+        <ul className="sidebar-links rounded-4 py-4">
         {
             items.map(item => (
-                <li key={item.id}>
-                    <Link to={item.path}>
+                <li key={item.id} className='py-2 py-lg-3'>
+                    <NavLink to={item.path} className={({ isActive }) => 
+                      (isActive ? "lactive-class rounded-1 p-1" : "not-active-class")}>
                         {item.title}
-                    </Link>
+                    </NavLink>
                 </li>
             ))
         }

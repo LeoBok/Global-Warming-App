@@ -14,7 +14,7 @@ function App() {
     return (
         <QueryClientProvider client={client}>
           <HashRouter>
-            <div className="App">
+            <div className="App rounded-4 m-1 m-sm-2 m-md-4 d-lg-flex">
             <Sidebar />
             <Routes>
               <Route path='/' element={<Main/>}/>

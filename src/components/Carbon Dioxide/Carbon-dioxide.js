@@ -4,13 +4,13 @@ import Chart from "../Chart";
 import { useQuery } from "@tanstack/react-query";
 import Axios from "axios";
 import CurrentValue from "../CurrentValue";
+import Description from '../Description'
+import LoadSpinner from '../LoadSpinner'
+import fetchData from '../fetchData'
 
 const CarbonDioxide = () => {
-
-    const fetchData = () => {
-        return Axios.get('https://global-warming.org/api/co2-api').then(res => res.data)
-    }
-    const { data } = useQuery(['carbonDioxide'], fetchData);
+    
+    const { data, isLoading } = useQuery(['carbonDioxide'], () => fetchData('https://global-warming.org/api/co2-api'));
     
     const [carbonDioxide, setCarbonDioxide] = useState([]);
     const [lastElement, setLastElement] = useState('');
@@ -36,9 +36,12 @@ const CarbonDioxide = () => {
     return(
         <>
             {
-                carbonDioxide && (
-                    <div className="container">
-                        <div className="graph-container">
+                isLoading && <LoadSpinner />
+            }
+            {
+                !isLoading && (
+                    <div className="pt-5 pb-3 mx-auto px-4">
+                        <div className="graph-container rounded-4 mx-auto py-3">
 
                             <CurrentValue currentValue={lastElement} />
 
@@ -48,13 +51,16 @@ const CarbonDioxide = () => {
                             />
 
                         </div>
-
-                        <p className="description">
-                            For thousands of years, the natural concentration of CO2 in the Earth's atmosphere has been around 280 ppm
-                            Since the beginning of the industrial revolution, human activities such as the burning of fossil fuels,
-                            deforestation and livestock have <span className="highlight-text">increased this amount by more than 30%</span>.
-                        </p>
-                    
+                        <div className="">
+                        <Description
+                            description={
+                                <>
+                                    For thousands of years, the natural concentration of CO2 in the Earth's atmosphere has been around 280 ppm
+                                    Since the beginning of the industrial revolution, human activities such as the burning of fossil fuels,
+                                    deforestation and livestock have <span className="highlight-text rounded-1 p-1">increased this amount by more than 30%</span>.
+                                </>
+                            }
+                        /></div>
                     </div>
                 )
             }

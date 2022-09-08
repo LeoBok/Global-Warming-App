@@ -4,8 +4,8 @@ import { pageLinks } from "../pageLinks"
 
 const Main = () => {
     return(
-        <main className="home">
-            <p className='intro'>
+        <main className="home mx-auto p-3 pb-xl-4">
+            <p className='intro fw-light fs-6 py-3 ps-md-3'>
                 In recent years, we have witnessed a rather worrying climate changes.
                 This is the reason why we need to be careful and take care of our Earth.
                 So I thought, it would be nice to have an app which you can monitor
