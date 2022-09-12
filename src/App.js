@@ -10,7 +10,7 @@ import PolarCapsMelting from './components/Polar Caps Melting/Polar-caps-melting
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 function App() {
-  const client = new QueryClient(); 
+  const client = new QueryClient();
     return (
         <QueryClientProvider client={client}>
           <HashRouter>

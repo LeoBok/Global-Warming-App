@@ -1,5 +1,4 @@
 import { useQuery } from "@tanstack/react-query";
-import Axios from "axios";
 import { useEffect, useState } from "react";
 import Chart from "../Chart";
 import CurrentValue from "../CurrentValue";
@@ -40,12 +39,14 @@ const NitrousOxide = () => {
             }
             { 
                 !isLoading && (
-                    <div className="component pt-5 pb-3 mx-auto px-4">
+                    <div className="chart pt-5 pb-3 mx-auto px-4">
                         <div className="graph-container rounded-4 mx-auto py-3">
 
                             <CurrentValue currentValue={lastElement} />
 
                             <Chart
+                                yMaxParam={350}
+                                yMinParam={300}
                                 chartData={nitrousOxide}
                                 lineName='Nitrous Oxide'
                             />

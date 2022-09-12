@@ -12,12 +12,12 @@ const Sidebar = () => {
                 <img
                     src={logo}
                     alt='logo app'
-                    className='my-3'
+                    className='py-3'
                 />
 
-                <h3 className='my-3 fs-4'>Global Warming App</h3>
+                <h3 className='py-3 fs-4'>Global Warming App</h3>
                 <Link to='/'>
-                    <BiHome className='sidebar-icon mt-lg-3'/>
+                    <BiHome className='sidebar-icon'/>
                 </Link>
             </div>
 

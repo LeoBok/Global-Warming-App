@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import '../Component.css'
 import Chart from "../Chart";
 import { useQuery } from "@tanstack/react-query";
-import Axios from "axios";
 import CurrentValue from "../CurrentValue";
 import Description from '../Description'
 import LoadSpinner from '../LoadSpinner'
@@ -40,18 +39,20 @@ const CarbonDioxide = () => {
             }
             {
                 !isLoading && (
-                    <div className="pt-5 pb-3 mx-auto px-4">
+                    <div className="chart pt-5 pb-3 mx-auto px-4">
                         <div className="graph-container rounded-4 mx-auto py-3">
 
                             <CurrentValue currentValue={lastElement} />
 
                             <Chart
+                                yMaxParam={450}
+                                yMinParam={350}
                                 chartData={carbonDioxide}
                                 lineName='Carbon Dioxide'
                             />
 
                         </div>
-                        <div className="">
+                        
                         <Description
                             description={
                                 <>
@@ -60,7 +61,7 @@ const CarbonDioxide = () => {
                                     deforestation and livestock have <span className="highlight-text rounded-1 p-1">increased this amount by more than 30%</span>.
                                 </>
                             }
-                        /></div>
+                        />
                     </div>
                 )
             }

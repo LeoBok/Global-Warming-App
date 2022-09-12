@@ -41,10 +41,10 @@ const PolarCapsMelting = () => {
             }
             { 
                 !isLoading && (
-                    <div className="component pt-5 pb-3 mx-auto px-4">
+                    <div className="chart pt-5 pb-3 mx-auto px-4">
                         <div className="graph-container rounded-4 mx-auto py-3">
 
-                        { lastElement && <p className="text-center pt-4">Last value: <span className="element-data p-1">Extent {lastElement.extent}, Area {lastElement.area}</span></p> }
+                        { lastElement && <p className="text-center pt-4">Today's value: <span className="element-data p-1">Extent {lastElement.extent}, Area {lastElement.area}</span></p> }
 
                         <ResponsiveContainer width='100%' aspect={2}>
                             <LineChart

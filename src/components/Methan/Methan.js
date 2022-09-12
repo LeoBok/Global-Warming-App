@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import '../Component.css'
-import Axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 import Chart from "../Chart";
 import CurrentValue from "../CurrentValue";
@@ -41,14 +40,17 @@ const Methan = () => {
             {
                 isLoading && <LoadSpinner />
             }
+            
             { 
                 !isLoading && (
-                    <div className='component pt-5 pb-3 mx-auto px-4'>
+                    <div className='chart pt-5 pb-3 px-4'>
                         <div className="graph-container rounded-4 mx-auto py-3">
 
                             <CurrentValue currentValue={lastElement} />
 
                             <Chart
+                                yMaxParam={2000}
+                                yMinParam={1500}
                                 chartData={methanLevels}
                                 lineName='Methan'
                             />
