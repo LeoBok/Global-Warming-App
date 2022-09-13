@@ -1,11 +1,8 @@
 .graph-container {
-    /*
-    background-image: linear-gradient(180deg, #fdfbfb 0%, #ebedee 100%);
-    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-    */
     background: transparent;
     border: rgba(255,255,255,0.2);
-    box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.6), -9px -9px 16px rgba(255, 255, 255, 0.5);
+    box-shadow:  8px 8px 17px #c8c8c8,
+             -8px -8px 17px #ffffff;
 }
   
 .element-data {

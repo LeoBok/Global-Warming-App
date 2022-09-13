@@ -32,7 +32,7 @@ const MethanComp = ({ methanData, isLoading }) => {
 
     useEffect(() => {
         const lastItem =  methanData && methanData[methanData.length - 1];
-        setLastElement(lastItem?.station);
+        setLastElement(lastItem?.average);
     }, [methanData]);
 
   return (
