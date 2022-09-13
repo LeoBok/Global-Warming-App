@@ -4,7 +4,6 @@ import CurrentValue from "../CurrentValue";
 import LoadSpinner from "../LoadSpinner";
 
 const MethanComp = ({ methanData, isLoading }) => {
-    console.log(methanData);
     const [lastElement, setLastElement] = useState('');
     const [ methanState, setMethanState ] = useState([]);
 
@@ -15,7 +14,8 @@ const MethanComp = ({ methanData, isLoading }) => {
                 year: item.date.slice(0, 4),
                 station: item.average,
             };
-        });
+        }).slice(1);
+        console.log(mappedData)
         setMethanState(mappedData);
     }
     }, [methanData]);
