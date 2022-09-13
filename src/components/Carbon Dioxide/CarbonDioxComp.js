@@ -5,9 +5,10 @@ import LoadSpinner from "../LoadSpinner";
 
 
 const CarbonDioxComp = ({ co2, isLoading }) => {
+    
     const [co2State, setCo2State] = useState([]);
     const [lastElement, setLastElement] = useState('');
-console.log(co2);
+
     useEffect(() => {
         if (co2) {
         const mappedData = co2?.map(item => {
