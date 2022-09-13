@@ -5,7 +5,7 @@ import CurrentValue from "../CurrentValue";
 
 const TempComp = ({ tempData, isLoading }) => {
     const [lastElement, setLastElement] = useState('');
-    const [ temperatureAnomalies, setTemperatureAnomalies ] = useState([]);
+    const [ tempState, setTempState ] = useState([]);
 
     useEffect(() => {
         if (tempData) {
@@ -15,7 +15,7 @@ const TempComp = ({ tempData, isLoading }) => {
                 station: item.station,
             };
         });
-        setTemperatureAnomalies(mappedData);
+        setTempState(mappedData);
     }
     }, [tempData]);
 
@@ -26,7 +26,7 @@ const TempComp = ({ tempData, isLoading }) => {
                 station: item.station,
             };
         }).slice(min, max);
-        setTemperatureAnomalies(sliced)
+        setTempState(sliced)
     }
 
     useEffect(() => {
@@ -47,7 +47,7 @@ const TempComp = ({ tempData, isLoading }) => {
                     <Chart
                         yMaxParam={2}
                         yMinParam={-2}
-                        chartData={temperatureAnomalies}
+                        chartData={tempState}
                         lineName='temperature variation'
                     />
                 </div>
