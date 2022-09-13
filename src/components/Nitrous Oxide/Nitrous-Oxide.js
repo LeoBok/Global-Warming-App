@@ -1,9 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { useEffect, useState } from "react";
-import Chart from "../Chart";
-import CurrentValue from "../CurrentValue";
 import Description from '../Description'
-import LoadSpinner from '../LoadSpinner'
 import fetchData from "../fetchData";
 import NitrousOxideComp from "./NitrousOxideComp";
 

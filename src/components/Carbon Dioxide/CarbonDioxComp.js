@@ -58,8 +58,8 @@ const CarbonDioxComp = ({ co2, isLoading }) => {
         <div className="mt-4 btn-comp-cont d-md-flex justify-content-center">
             <button className="temp-button rounded-3 p-2 p-md-3 px-lg-2 py-lg-3 m-1 m-sm-2" onClick={() => selectRangeDate(0, 972)}> from { co2?.[0].year } to { co2?.[972].year } </button>
             <button className="temp-button rounded-3 p-2 p-md-3 px-lg-2 py-lg-3 m-1 m-sm-2" onClick={() => selectRangeDate(973, 1944)}> from { co2?.[118].year } to { co2?.[234].year } </button>
-            <button className="temp-button rounded-3 p-2 p-md-3 px-lg-2 py-lg-3 m-1 m-sm-2" onClick={() => selectRangeDate(1995, co2.length - 1)}> from { co2?.[235].year } to { co2?.[co2.length - 1].year } </button>
-            <button className="temp-button rounded-3 p-2 p-md-3 px-lg-2 py-lg-3 m-1 m-sm-2" onClick={() => selectRangeDate(0, co2.length - 1)}> from { co2?.[1].year } to {co2?.[co2.length - 1].year } </button>
+            <button className="temp-button rounded-3 p-2 p-md-3 px-lg-2 py-lg-3 m-1 m-sm-2" onClick={() => selectRangeDate(1995, co2.length)}> from { co2?.[235].year } to { co2?.[co2.length - 1].year } </button>
+            <button className="temp-button rounded-3 p-2 p-md-3 px-lg-2 py-lg-3 m-1 m-sm-2" onClick={() => selectRangeDate(0, co2.length)}> from { co2?.[1].year } to {co2?.[co2.length - 1].year } </button>
         </div>
     </>
     )
