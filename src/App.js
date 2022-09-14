@@ -1,12 +1,12 @@
 import './App.css';
-import Main from './components/Main/Main'
-import TemperatureAnomalies from './components/Temperature anomalies/Temperature-anomalies'
-import Sidebar from './components/Sidebar/Sidebar'
+import Main from './pages/Main/Main'
+import TemperatureAnomalies from './pages/TemperaturePage/Temperature-anomalies'
+import Sidebar from './pages/Sidebar/Sidebar'
 import { HashRouter, Routes, Route } from "react-router-dom";
-import CarbonDioxide from './components/Carbon Dioxide/Carbon-dioxide';
-import Methan from './components/Methan/Methan';
-import NitrousOxide from './components/Nitrous Oxide/Nitrous-Oxide';
-import PolarCapsMelting from './components/Polar Caps Melting/Polar-caps-melting';
+import CarbonDioxide from './pages/CarbonDioxPage/Carbon-dioxide';
+import Methan from './pages/MethanPage/Methan';
+import NitrousOxide from './pages/NitrousOxidePage/Nitrous-Oxide';
+import PolarCapsMelting from './pages/PolarCapsPage/Polar-caps-melting';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 function App() {

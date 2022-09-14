@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import LoadSpinner from '../LoadSpinner'
-import Chart from '../Chart'
-import CurrentValue from "../CurrentValue";
+import LoadSpinner from "../LoadSpinnerComp/LoadSpinner";
+import Chart from '../ChartComponent/Chart'
+import CurrentValue from "../CurrentValueComp/CurrentValue";
 
 const TempComp = ({ tempData, isLoading }) => {
     const [lastElement, setLastElement] = useState('');

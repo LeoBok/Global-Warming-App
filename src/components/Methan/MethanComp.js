@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import Chart from "../Chart";
-import CurrentValue from "../CurrentValue";
-import LoadSpinner from "../LoadSpinner";
+import Chart from "../ChartComponent/Chart";
+import CurrentValue from "../CurrentValueComp/CurrentValue";
+import LoadSpinner from "../LoadSpinnerComp/LoadSpinner";
 
 const MethanComp = ({ methanData, isLoading }) => {
     const [lastElement, setLastElement] = useState('');

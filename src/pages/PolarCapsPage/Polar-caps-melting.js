@@ -1,8 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
-import '../Component.css'
-import Description from "../Description";
-import fetchData from "../fetchData";
-import PolarCapsComp from "./PolarCapsComp";
+import '../../components/Component.css'
+import Description from '../../components/DescriptionComp/Description'
+import fetchData from "../../components/fetchData";
+import PolarCapsComp from "../../components/Polar Caps Melting/PolarCapsComp";
 
 const PolarCapsMelting = () => {
     

@@ -1,8 +1,8 @@
-import '../Component.css'
+import '../../components/Component.css'
 import { useQuery } from "@tanstack/react-query";
-import Description from '../Description'
-import fetchData from '../fetchData'
-import CarbonDioxComp from './CarbonDioxComp';
+import Description from '../../components/DescriptionComp/Description'
+import fetchData from '../../components/fetchData'
+import CarbonDioxComp from '../../components/Carbon Dioxide/CarbonDioxComp';
 
 const CarbonDioxide = () => {
     

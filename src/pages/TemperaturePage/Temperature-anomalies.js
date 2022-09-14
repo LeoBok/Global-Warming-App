@@ -1,8 +1,8 @@
-import '../Component.css'
-import Description from '../Description'
-import TempComp from "./TempComp";
+import '../../components/Component.css'
+import Description from '../../components/DescriptionComp/Description'
+import TempComp from "../../components/TempComponent/TempComp";
 import { useQuery } from "@tanstack/react-query"
-import fetchData from '../fetchData';
+import fetchData from '../../components/fetchData';
 
 const TemperatureAnomalies = () => {
     const { data: tempData, isLoading } = useQuery(['temperatureVar'], () => fetchData('https://global-warming.org/api/temperature-api'));

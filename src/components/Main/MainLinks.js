@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import stats from '../../images/stats.png'
+import stats from '../../assets/images/stats.png'
 
 const MainLinks = ({ items }) => {
     return(

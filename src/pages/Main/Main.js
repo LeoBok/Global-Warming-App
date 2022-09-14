@@ -1,6 +1,6 @@
-import MainLinks from "./MainLinks"
-import './Main.css'
-import { pageLinks } from "../pageLinks"
+import MainLinks from "../../components/Main/MainLinks"
+import '../../components/Main/Main.css'
+import { pageLinks } from "../../components/pageLinks"
 
 const Main = () => {
     return(

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis, Legend } from "recharts";
-import LoadSpinner from "../LoadSpinner";
+import LoadSpinner from "../LoadSpinnerComp/LoadSpinner";
 
 const PolarCapsComp = ({ arcticData, isLoading }) => {
     const [arcticDataState, setArcticDataState] = useState([]);

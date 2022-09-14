@@ -1,9 +1,9 @@
-import logo from '../../images/logo-app.png'
+import logo from '../../assets/images/logo-app.png'
 import { BiHome } from 'react-icons/bi'
-import SidebarLinks from './SidebarLinks';
+import SidebarLinks from '../../components/Sidebar/SidebarLinks';
 import { Link } from 'react-router-dom'
-import './Sidebar.css'
-import { pageLinks } from '../pageLinks';
+import '../../components/Sidebar/Sidebar.css'
+import { pageLinks } from '../../components/pageLinks';
 
 const Sidebar = () => {
     return(
