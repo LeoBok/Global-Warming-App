@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import stats from '../../assets/images/stats.png'
+import CarouselComp from "../CarouselComp/CarouselComp"
 
 const MainLinks = ({ items }) => {
     return(
@@ -19,6 +20,7 @@ const MainLinks = ({ items }) => {
                     </li>
                 ))
             }
+            <CarouselComp />
         </ul>
     )
 }

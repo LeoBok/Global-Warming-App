@@ -6,8 +6,10 @@ const SidebarLinks = ({ items }) => {
         {
             items.map(item => (
                 <li key={item.id} className='py-2 py-lg-3'>
-                    <NavLink to={item.path} className={({ isActive }) => 
-                      (isActive ? "active-class rounded-1 p-1" : "not-active-class")}>
+                    <NavLink
+                        to={item.path}
+                        className={({ isActive }) => (isActive ? "active-class rounded-1 p-1" : "not-active-class")}
+                    >
                         {item.title}
                     </NavLink>
                 </li>
