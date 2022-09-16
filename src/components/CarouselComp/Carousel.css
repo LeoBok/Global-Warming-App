@@ -1,4 +1,39 @@
-.carousel-btn {
-    border: none;
-    background: transparent;
+.carousel {
+    background: hsla(37, 97%, 70%, 1);
+
+    background: linear-gradient(135deg, hsla(37, 97%, 70%, 1) 0%, hsla(197, 25%, 50%, 1) 100%);
+
+    background: -moz-linear-gradient(135deg, hsla(37, 97%, 70%, 1) 0%, hsla(197, 25%, 50%, 1) 100%);
+
+    background: -webkit-linear-gradient(135deg, hsla(37, 97%, 70%, 1) 0%, hsla(197, 25%, 50%, 1) 100%);
 }
+
+.carousel-span {
+    color: #FFFFFF !important;
+}
+
+.carousel p {
+    color: #FFFFFF !important;
+}
+
+.carousel a,
+.carousel h6 {
+   color: #544a7d !important;
+}
+.animate.pop {
+    animation-duration: 0.5s;
+    animation-name: animate-pop;
+    animation-timing-function: cubic-bezier(.26, .53, .74, 1.48);
+  }
+  
+  @keyframes animate-pop {
+    0% {
+      opacity: 0;
+      transform: scale(0.5, 0.5);
+    }
+  
+    100% {
+      opacity: 1;
+      transform: scale(1, 1);
+    }
+  }

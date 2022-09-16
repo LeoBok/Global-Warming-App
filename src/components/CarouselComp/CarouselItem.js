@@ -1,10 +1,10 @@
-const CarouselItem = ({ title, link, littleParagraph }) => {
+const CarouselItem = ({ carouselItem }) => {
   return (
-    <span className="d-flex flex-column align-items-center justify-content-center">
-        <h5 className='fw-bolder fs-6'>{title}</h5>
-        <a href={link}>{title}</a>
-        <p>{littleParagraph}</p>
-    </span>
+    <>
+        <h6 className='fw-bolder'>{carouselItem.title}</h6>
+        <p>{carouselItem.littleParagraph}</p>
+        <span className="carousel-span">Link to:</span> <a href={carouselItem.link}>{carouselItem.title}</a>
+    </>
   )
 }
 

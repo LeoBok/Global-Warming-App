@@ -45,7 +45,7 @@ const PolarCapsComp = ({ arcticData, isLoading }) => {
                 !isLoading && (
                     <div className='graph-container mx-auto rounded-4 py-3'>
                         {
-                            lastElement && <p className="text-center pt-4">Today's value: <span className="element-data p-1">Extent {lastElement.extent}, Area {lastElement.area}</span></p>
+                            lastElement && <p className="text-center pt-4">Today's value: <span className="element-data rounded-1 p-1">Extent {lastElement.extent}, Area {lastElement.area}</span></p>
                         }
                         <ResponsiveContainer width='100%' aspect={2}>
                             <LineChart

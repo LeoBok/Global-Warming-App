@@ -36,8 +36,12 @@ a {
     max-width: 600px;
     line-height: 25px;
   }
-  .single-item {
+  .single-item,
+  .carousel {
     max-width: 450px;
+  }
+  .carousel {
+    height: 200px;
   }
   .graph-img {
     max-width: 150px;
@@ -49,8 +53,12 @@ a {
 }
 
 @media only screen and (min-width: 576px) {
-  .single-item {
-    max-width: 500px;
+  .single-item,
+  .carousel {
+    max-width: 500px;height: 230px;
+  }
+  .carousel {
+    
   }
   .graph-container {
     max-width: 550px;
@@ -64,11 +72,12 @@ a {
   .intro {
     max-width: 650px;
   }
-  .single-item {
+  .single-item,
+  .carousel {
     max-width: 590px;
   }
   .graph-container {
-    width: 600px;
+    max-width: 600px;
   }
 }
 
@@ -80,7 +89,7 @@ a {
     height: 100vh;
   }
   .App {
-    min-width: 960px;
+    width: 960px;
     height: 650px;
   }
   .main-sidebar-content {
@@ -99,11 +108,5 @@ a {
 @media only screen and (min-width: 1200px) {
   .App {
     min-width: 1100px;
-  }
-  .main-sidebar-content {
-    width: 250px;
-  }
-  .items-container {
-    grid-gap: 20px;
   }
 }

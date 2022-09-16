@@ -55,10 +55,10 @@ const MethanComp = ({ methanData, isLoading }) => {
             )
         }
         <div className="mt-4 btn-comp-cont d-md-flex justify-content-center">
-            <button className="temp-button rounded-3 p-2 p-md-3 px-lg-2 py-lg-3 m-1 m-sm-2" onClick={() => selectRangeDate(1, 117)}> from { methanData?.[1].date.slice(0, 4) } to { methanData?.[117].date.slice(0, 4) } </button>
-            <button className="temp-button rounded-3 p-2 p-md-3 px-lg-2 py-lg-3 m-1 m-sm-2" onClick={() => selectRangeDate(118, 234)}> from { methanData?.[118].date.slice(0, 4) } to { methanData?.[234].date.slice(0, 4) } </button>
-            <button className="temp-button rounded-3 p-2 p-md-3 px-lg-2 py-lg-3 m-1 m-sm-2" onClick={() => selectRangeDate(235, methanData.length)}> from { methanData?.[235].date.slice(0, 4) } to { methanData?.[methanData.length - 1].date.slice(0, 4) } </button>
-            <button className="temp-button rounded-3 p-2 p-md-3 px-lg-2 py-lg-3 m-1 m-sm-2" onClick={() => selectRangeDate(1, methanData.length)}> from { methanData?.[1].date.slice(0, 4) } to {methanData?.[methanData.length - 1].date.slice(0, 4) } </button>
+            <button className="temp-button rounded-3 p-2 p-md-3 px-lg-2 py-lg-3 m-1 m-sm-2" onClick={() => selectRangeDate(1, 117)}> from { methanData?.[1].date.slice(0, 4) } to Today </button>
+            <button className="temp-button rounded-3 p-2 p-md-3 px-lg-2 py-lg-3 m-1 m-sm-2" onClick={() => selectRangeDate(118, 234)}> from { methanData?.[118].date.slice(0, 4) } to Today </button>
+            <button className="temp-button rounded-3 p-2 p-md-3 px-lg-2 py-lg-3 m-1 m-sm-2" onClick={() => selectRangeDate(235, methanData.length)}> from { methanData?.[235].date.slice(0, 4) } to Today </button>
+            <button className="temp-button rounded-3 p-2 p-md-3 px-lg-2 py-lg-3 m-1 m-sm-2" onClick={() => selectRangeDate(1, methanData.length)}> from { methanData?.[1].date.slice(0, 4) } to Today </button>
         </div>
     </>
   )

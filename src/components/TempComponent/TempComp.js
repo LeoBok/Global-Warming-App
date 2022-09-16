@@ -54,10 +54,10 @@ const TempComp = ({ tempData, isLoading }) => {
             )
         }
         <div className="mt-4 btn-comp-cont d-md-flex justify-content-center">
-            <button className="temp-button rounded-3 p-2 p-md-3 px-lg-2 py-lg-3 m-1 m-sm-2" onClick={() => selectRangeDate(0, 427)}> from { tempData?.[0].time.slice(0, 4) } to { tempData?.[427].time.slice(0, 4) } </button>
-            <button className="temp-button rounded-3 p-2 p-md-3 px-lg-2 py-lg-3 m-1 m-sm-2" onClick={() => selectRangeDate(425, 855)}> from { tempData?.[425].time.slice(0, 4) } to { tempData?.[855].time.slice(0, 4) } </button>
-            <button className="temp-button rounded-3 p-2 p-md-3 px-lg-2 py-lg-3 m-1 m-sm-2" onClick={() => selectRangeDate(856, tempData.length)}> from { tempData?.[856].time.slice(0, 4) } to { tempData?.[tempData.length - 1].time.slice(0, 4) } </button>
-            <button className="temp-button rounded-3 p-2 p-md-3 px-lg-2 py-lg-3 m-1 m-sm-2" onClick={() => selectRangeDate(0, tempData.length)}> from { tempData?.[0].time.slice(0, 4) } to {tempData?.[tempData.length - 1].time.slice(0, 4) } </button>
+            <button className="temp-button rounded-3 p-2 p-md-3 px-lg-2 py-lg-3 m-1 m-sm-2" onClick={() => selectRangeDate(0, 427)}> from { tempData?.[0].time.slice(0, 4) } to Today </button>
+            <button className="temp-button rounded-3 p-2 p-md-3 px-lg-2 py-lg-3 m-1 m-sm-2" onClick={() => selectRangeDate(425, 855)}> from { tempData?.[425].time.slice(0, 4) } to Today </button>
+            <button className="temp-button rounded-3 p-2 p-md-3 px-lg-2 py-lg-3 m-1 m-sm-2" onClick={() => selectRangeDate(856, tempData.length)}> from { tempData?.[856].time.slice(0, 4) } to Today </button>
+            <button className="temp-button rounded-3 p-2 p-md-3 px-lg-2 py-lg-3 m-1 m-sm-2" onClick={() => selectRangeDate(0, tempData.length)}> from { tempData?.[0].time.slice(0, 4) } to Today </button>
         </div>
     </>
   )

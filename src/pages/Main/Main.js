@@ -4,7 +4,7 @@ import { pageLinks } from "../../components/pageLinks"
 
 const Main = () => {
     return(
-        <main className="home mx-auto p-3 pb-xl-4">
+        <main className="home mx-auto p-3 pb-lg-4 d-lg-flex flex-lg-column justify-content-around">
             <p className='intro fw-light fs-6 py-3 ps-md-3'>
                 In recent years, we have witnessed a rather worrying climate changes.
                 This is the reason why we need to be careful and take care of our Earth.
