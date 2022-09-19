@@ -7,7 +7,6 @@ const PolarCapsComp = ({ arcticData, isLoading }) => {
     const [arcticDataState, setArcticDataState] = useState([]);
     const [lastElement, setLastElement] = useState('');
     const [btnStateId, setBtnStateId] = useState(4);
-    console.log(arcticData?.[9].year);
 
     useEffect(() => {
         if (arcticData) {
