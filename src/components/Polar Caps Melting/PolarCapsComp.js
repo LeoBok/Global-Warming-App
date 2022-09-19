@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis, Legend } from "recharts";
+import BtnGraphComp from "../Graph Button Component/BtnGraphComp";
 import LoadSpinner from "../LoadSpinnerComp/LoadSpinner";
 
 const PolarCapsComp = ({ arcticData, isLoading }) => {
     const [arcticDataState, setArcticDataState] = useState([]);
     const [lastElement, setLastElement] = useState('');
+    const [btnStateId, setBtnStateId] = useState(4);
+    console.log(arcticData?.[9].year);
 
     useEffect(() => {
         if (arcticData) {
@@ -19,7 +22,7 @@ const PolarCapsComp = ({ arcticData, isLoading }) => {
         }
     }, [arcticData]);
 
-    const selectRangeDate = (min, max) => {
+    const selectRangeDate = (min, max, id) => {
         const sliced = arcticData?.map(item => {
             return {
                 year: item.year,
@@ -28,6 +31,7 @@ const PolarCapsComp = ({ arcticData, isLoading }) => {
             };
         }).slice(min, max);
         setArcticDataState(sliced);
+        setBtnStateId(id)
     }
 
     useEffect(() => {
@@ -65,10 +69,34 @@ const PolarCapsComp = ({ arcticData, isLoading }) => {
             }
 
             <div className="mt-4 btn-comp-cont d-md-flex justify-content-center">
-                <button className="temp-button rounded-3 p-2 p-md-3 px-lg-2 py-lg-3 m-1 m-sm-2" onClick={() => selectRangeDate(0, 10)}> from 1979 to 1989 </button>
-                <button className="temp-button rounded-3 p-2 p-md-3 px-lg-2 py-lg-3 m-1 m-sm-2" onClick={() => selectRangeDate(11, 20)}> from 1990 to 1999 </button>
-                <button className="temp-button rounded-3 p-2 p-md-3 px-lg-2 py-lg-3 m-1 m-sm-2" onClick={() => selectRangeDate(21, arcticData.length)}> from 2000 to Today </button>
-                <button className="temp-button rounded-3 p-2 p-md-3 px-lg-2 py-lg-3 m-1 m-sm-2" onClick={() => selectRangeDate(0, arcticData.length)}> from 1979 to Today </button>
+                <BtnGraphComp
+                    idNum={1}
+                    btnStateId={btnStateId}
+                    initialDate={arcticData?.[0].year}
+                    finalDate={arcticData?.[10].year}
+                    loadGraphFunc={() => selectRangeDate(0, 11, 1)}
+                />
+                <BtnGraphComp
+                    idNum={2}
+                    btnStateId={btnStateId}
+                    initialDate={arcticData?.[11].year}
+                    finalDate={arcticData?.[20].year}
+                    loadGraphFunc={() => selectRangeDate(11, 21, 2)}
+                />
+                <BtnGraphComp
+                    idNum={3}
+                    btnStateId={btnStateId}
+                    initialDate={arcticData?.[21].year}
+                    finalDate={arcticData?.[arcticData.length - 1].year}
+                    loadGraphFunc={() => selectRangeDate(21, arcticData.length, 3)}
+                />
+                <BtnGraphComp
+                    idNum={4}
+                    btnStateId={btnStateId}
+                    initialDate={arcticData?.[0].year}
+                    finalDate={arcticData?.[arcticData.length - 1].year}
+                    loadGraphFunc={() => selectRangeDate(0, arcticData.length, 4)}
+                />
             </div>
         </>
     )

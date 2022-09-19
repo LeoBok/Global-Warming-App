@@ -2,10 +2,12 @@ import { useEffect, useState } from "react";
 import LoadSpinner from "../LoadSpinnerComp/LoadSpinner";
 import Chart from '../ChartComponent/Chart'
 import CurrentValue from "../CurrentValueComp/CurrentValue";
+import BtnGraphComp from "../Graph Button Component/BtnGraphComp";
 
 const TempComp = ({ tempData, isLoading }) => {
     const [lastElement, setLastElement] = useState('');
     const [ tempState, setTempState ] = useState([]);
+    const [btnStateId, setBtnStateId] = useState(4);
 
     useEffect(() => {
         if (tempData) {
@@ -19,21 +21,22 @@ const TempComp = ({ tempData, isLoading }) => {
     }
     }, [tempData]);
 
-    const selectRangeDate = (min, max) => {
+    const selectRangeDate = (min, max, id) => {
         const sliced = tempData?.map(item => {
             return {
                 year: item.time.slice(0, 4),
                 station: item.station,
             };
         }).slice(min, max);
-        setTempState(sliced)
-    }
+        setTempState(sliced);
+        setBtnStateId(id)
+    };
 
     useEffect(() => {
         const lastItem =  tempData && tempData[tempData.length - 1];
         setLastElement(lastItem?.station);
     }, [tempData]);
-    
+
     return (
     <>
         {
@@ -54,10 +57,34 @@ const TempComp = ({ tempData, isLoading }) => {
             )
         }
         <div className="mt-4 btn-comp-cont d-md-flex justify-content-center">
-            <button className="temp-button rounded-3 p-2 p-md-3 px-lg-2 py-lg-3 m-1 m-sm-2" onClick={() => selectRangeDate(0, 427)}> from { tempData?.[0].time.slice(0, 4) } to Today </button>
-            <button className="temp-button rounded-3 p-2 p-md-3 px-lg-2 py-lg-3 m-1 m-sm-2" onClick={() => selectRangeDate(425, 855)}> from { tempData?.[425].time.slice(0, 4) } to Today </button>
-            <button className="temp-button rounded-3 p-2 p-md-3 px-lg-2 py-lg-3 m-1 m-sm-2" onClick={() => selectRangeDate(856, tempData.length)}> from { tempData?.[856].time.slice(0, 4) } to Today </button>
-            <button className="temp-button rounded-3 p-2 p-md-3 px-lg-2 py-lg-3 m-1 m-sm-2" onClick={() => selectRangeDate(0, tempData.length)}> from { tempData?.[0].time.slice(0, 4) } to Today </button>
+            <BtnGraphComp
+                idNum={1}
+                btnStateId={btnStateId}
+                initialDate={tempData?.[0].time.slice(0, 4)}
+                finalDate={tempData?.[424].time.slice(0, 4)}
+                loadGraphFunc={() => selectRangeDate(0, 424, 1)}
+            />
+            <BtnGraphComp
+                idNum={2}
+                btnStateId={btnStateId}
+                initialDate={tempData?.[425].time.slice(0, 4)}
+                finalDate={tempData?.[855].time.slice(0, 4)}
+                loadGraphFunc={() => selectRangeDate(425, 855, 2)}
+            />
+            <BtnGraphComp
+                idNum={3}
+                btnStateId={btnStateId}
+                initialDate={tempData?.[856].time.slice(0, 4)}
+                finalDate={tempData?.[tempData.length - 1].time.slice(0, 4)}
+                loadGraphFunc={() => selectRangeDate(856, tempData.length, 3)}
+            />
+            <BtnGraphComp
+                idNum={4}
+                btnStateId={btnStateId}
+                initialDate={tempData?.[0].time.slice(0, 4)}
+                finalDate={tempData?.[tempData.length - 1].time.slice(0, 4)}
+                loadGraphFunc={() => selectRangeDate(0, tempData.length, 4)}
+            />
         </div>
     </>
   )
