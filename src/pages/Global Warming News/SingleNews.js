@@ -1,5 +1,5 @@
 import './GbNews.css'
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import {carouselData} from "../../components/CarouselComp/carouselData";
 
 const SingleNews = () => {
@@ -7,16 +7,20 @@ const SingleNews = () => {
   const singleNotice = carouselData.find(data => data.id == singleNewsId)
 
   return (
-    <div className='p-4 py-md-4 mx-auto'>
-      <article className="singleNews p-4 py-md-3 mx-auto">
+    <div className='p-4 p-lg-0 mx-auto'>
+      <article className="singleNews p-4 py-md-3 p-lg-3 mt-lg-3 mx-auto">
           <img
             src={singleNotice.imgSource}
             className='card-img-top news-img'
             alt={singleNotice.title}
           />
-          <h4 className="p-3">{singleNotice.title}</h4>
+          <h4 className="py-3">{singleNotice.title}</h4>
           <p>{singleNotice.extendedParagraph}</p>
+          
+          <Link to='/'>Back to Home</Link>
       </article>
+
+      
   </div>
   )
 }
