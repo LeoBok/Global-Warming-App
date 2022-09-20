@@ -1,3 +1,10 @@
+.singleNews {
+    border-radius: 20px;
+    background: transparent;
+    box-shadow:  8px 8px 29px #a4a4a4,
+            -8px -8px 29px #ffffff;
+}
+
 article h4 {
     color: #303030;
 }

@@ -18,8 +18,27 @@
 
 .carousel a,
 .carousel h6 {
-   color: #544a7d !important;
+
+   color: #796ab2;
 }
+
+.carousel a:hover {
+  color: #544a7d;
+  transition: 0.5s;
+}
+
+.singleNews-btn {
+  border: none;
+  background-color: #FFFFFF;
+  color: #544a7d;
+}
+
+.singleNews-btn:hover {
+  color: #FFFFFF;
+  background-color: #675b94;
+  transition: 0.7s;
+}
+
 .animate.pop {
     animation-duration: 0.5s;
     animation-name: animate-pop;

@@ -5,7 +5,7 @@ import { carouselData } from '../CarouselComp/carouselData'
 
 const MainLinks = ({ items }) => {
     return(
-        <ul className="items-container pb-lg-3 px-lg-4">
+        <ul className="items-container px-lg-1">
             {
                 items.map(item => (
                     <li key={item.id} className='single-item rounded-4 mx-auto d-flex flex-column align-items-center justify-content-center py-4 my-5 m-lg-0 py-lg-4 px-lg-3'>

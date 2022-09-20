@@ -50,15 +50,16 @@ a {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
+  .singleNews {
+    max-width: 500px;
+  }
 }
 
 @media only screen and (min-width: 576px) {
   .single-item,
   .carousel {
-    max-width: 500px;height: 230px;
-  }
-  .carousel {
-    
+    max-width: 500px;
+    height: 230px;
   }
   .graph-container {
     max-width: 550px;
@@ -76,7 +77,8 @@ a {
   .carousel {
     max-width: 590px;
   }
-  .graph-container {
+  .graph-container,
+  .singleNews {
     max-width: 600px;
   }
 }
@@ -90,7 +92,7 @@ a {
   }
   .App {
     width: 960px;
-    height: 650px;
+    height: 680px;
   }
   .main-sidebar-content {
     width: 250px;
@@ -102,6 +104,9 @@ a {
   }
   .graph-img {
     height: 100px;
+  }
+  .news-img {
+    height: 300px;
   }
 }
 
