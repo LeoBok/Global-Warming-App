@@ -1,6 +1,6 @@
 import logo from '../../assets/images/logo-app.png'
 import { BiHome } from 'react-icons/bi'
-import SidebarLinks from '../../components/Sidebar/SidebarLinks';
+import SidebarLinks from '../../components/Sidebar/Sidebar-links';
 import { Link } from 'react-router-dom'
 import '../../components/Sidebar/Sidebar.css'
 import { pageLinks } from '../../components/pageLinks';

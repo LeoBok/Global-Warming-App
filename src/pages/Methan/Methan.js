@@ -1,16 +1,26 @@
 import '../../components/Component.css'
 import { useQuery } from "@tanstack/react-query";
-import Description from '../../components/DescriptionComp/Description'
-import fetchData from '../../components/fetchData'
-import MethanComp from '../../components/Methan/MethanComp';
+import Description from '../../components/Description/Description'
+import fetchData from '../../utility/fetchData'
+import MethanComp from '../../components/Methan/Methan';
+import { useMemo } from 'react';
 
 const Methan = () => {
     
     const { data: methanData, isLoading } = useQuery(['methan'], () => fetchData('https://global-warming.org/api/methane-api'));
+    const methane = useMemo(() => 
+        methanData?.methane.slice(1).map(item => {
+            return {
+                year: item.date.slice(0, 4),
+                station: item.average
+            }
+        })
+    , [methanData])
+
     return(
         <div className='chart pt-5 pb-3 px-4'>
             <MethanComp
-                methanData={methanData?.methane}
+                methane={methane}
                 isLoading={isLoading}
             />
             

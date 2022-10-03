@@ -1,17 +1,25 @@
 import '../../components/Component.css'
 import { useQuery } from "@tanstack/react-query";
-import Description from '../../components/DescriptionComp/Description'
-import fetchData from "../../components/fetchData";
-import NitrousOxideComp from "../../components/Nitrous Oxide/NitrousOxideComp";
+import Description from '../../components/Description/Description'
+import fetchData from "../../utility/fetchData";
+import NitrousOxideComp from "../../components/Nitrous Oxide/Nitrous-oxide";
+import { useMemo } from 'react';
 
 const NitrousOxide = () => {
     
     const { data: nitrousOxideData, isLoading } = useQuery( ['nitorousOxide'], () => fetchData('https://global-warming.org/api/nitrous-oxide-api'));
+    const nitrous = useMemo(() => 
+        nitrousOxideData?.nitrous.map(item => {
+            return {
+                year: item.date.slice(0, 4),
+                station: item.average
+            }
+    }).slice(1), [nitrousOxideData]);
 
     return(
         <div className="chart pt-5 pb-3 mx-auto px-4">
             <NitrousOxideComp
-                nitrousOxideData={nitrousOxideData?.nitrous}
+                nitrous={nitrous}
                 isLoading={isLoading}
             />
             

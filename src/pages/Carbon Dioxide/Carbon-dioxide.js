@@ -1,17 +1,27 @@
 import '../../components/Component.css'
 import { useQuery } from "@tanstack/react-query";
-import Description from '../../components/DescriptionComp/Description'
-import fetchData from '../../components/fetchData'
-import CarbonDioxComp from '../../components/Carbon Dioxide/CarbonDioxComp';
+import Description from '../../components/Description/Description'
+import fetchData from '../../utility/fetchData'
+import CarbonDioxComp from '../../components/Carbon Dioxide/Carbon-dioxide';
+import { useMemo } from 'react';
 
 const CarbonDioxide = () => {
     
     const { data: carbonDioxData, isLoading } = useQuery(['carbonDioxide'], () => fetchData('https://global-warming.org/api/co2-api'));
+
+    const carbonDioxide = useMemo(() => 
+        carbonDioxData?.co2.map(item => {
+            return {
+                year: item.year,
+                station: item.trend
+            }
+        })
+    , [carbonDioxData])
     
     return(
         <div className="chart pt-5 pb-3 mx-auto px-4">
             <CarbonDioxComp
-                co2={carbonDioxData?.co2}
+                carbonDioxide={carbonDioxide}
                 isLoading={isLoading}
             />
                                   

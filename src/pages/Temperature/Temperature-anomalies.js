@@ -1,15 +1,24 @@
 import '../../components/Component.css'
-import Description from '../../components/DescriptionComp/Description'
-import TempComp from "../../components/TempComponent/TempComp";
+import Description from '../../components/Description/Description'
+import Temperature from "../../components/Temperature/Temperature";
 import { useQuery } from "@tanstack/react-query"
-import fetchData from '../../components/fetchData';
+import fetchData from '../../utility/fetchData';
+import { useMemo } from 'react';
 
 const TemperatureAnomalies = () => {
     const { data: tempData, isLoading } = useQuery(['temperatureVar'], () => fetchData('https://global-warming.org/api/temperature-api'));
+    const temperature = useMemo(() => 
+        tempData?.result.map(item => {
+            return {
+                year: item.time.slice(0, 4),
+                station: item.station
+            }
+        })
+    , [tempData])
     return(
         <>
             <div className="chart pt-5 pb-3 px-4 mx-auto">
-                <TempComp tempData={tempData?.result} isLoading={isLoading} />
+                <Temperature temperature={temperature} isLoading={isLoading} />
                 <Description
                         description={
                         <>  

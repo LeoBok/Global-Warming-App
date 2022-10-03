@@ -1,6 +1,6 @@
-import './GbNews.css'
+import './Global-warming-news.css'
 import { Link, useParams } from "react-router-dom"
-import {carouselData} from "../../components/CarouselComp/carouselData";
+import {carouselData} from "../../components/Carousel/carousel-data";
 
 const SingleNews = () => {
   const { singleNewsId } = useParams();

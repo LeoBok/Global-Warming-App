@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import Button from "../Button/Button"
 
 const CarouselItem = ({ carouselItem, onClickEvent }) => {
   return (
@@ -8,7 +9,11 @@ const CarouselItem = ({ carouselItem, onClickEvent }) => {
         <p className="">{carouselItem.littleParagraph}</p>
         <span className="carousel-span">Link to:</span> <Link to={`global-warming-news/${carouselItem.id}`}>{carouselItem.title}</Link>
       </div>
-      <button onClick={onClickEvent} className='singleNews-btn mx-auto w-50 my-3 my-lg-1 rounded-1'>next News</button>
+      <Button
+        onClickEvent={onClickEvent}
+        buttonStyle='singleNews-btn mx-auto w-50 my-3 my-lg-1 rounded-1'
+        children='Next news'
+      />
     </>
   )
 }

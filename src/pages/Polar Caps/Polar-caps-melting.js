@@ -1,17 +1,27 @@
 import { useQuery } from "@tanstack/react-query";
 import '../../components/Component.css'
-import Description from '../../components/DescriptionComp/Description'
-import fetchData from "../../components/fetchData";
-import PolarCapsComp from "../../components/Polar Caps Melting/PolarCapsComp";
+import Description from '../../components/Description/Description'
+import fetchData from "../../utility/fetchData";
+import PolarCapsComp from "../../components/Polar Caps Melting/Polar-caps";
+import { useMemo } from "react";
 
 const PolarCapsMelting = () => {
     
     const { data: arcticData, isLoading } = useQuery( ['polarCaps'], () => fetchData('https://global-warming.org/api/arctic-api'));
+    const polarArctic = useMemo(() => 
+        arcticData?.arcticData.map(item => {
+            return {
+                year: item.year,
+                area: item.area,
+                extent: item.extent
+            }
+        })
+    , [arcticData])
 
     return(
         <div className="chart pt-5 pb-3 mx-auto px-4">
             <PolarCapsComp
-                arcticData={arcticData?.arcticData}
+                polarArctic={polarArctic}
                 isLoading={isLoading}
             />
             

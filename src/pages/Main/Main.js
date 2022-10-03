@@ -1,4 +1,4 @@
-import MainLinks from "../../components/Main/MainLinks"
+import MainLinks from "../../components/Main/Main-links"
 import '../../components/Main/Main.css'
 import { pageLinks } from "../../components/pageLinks"
 

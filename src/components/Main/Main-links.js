@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom"
 import stats from '../../assets/images/stats.png'
-import CarouselComp from "../CarouselComp/CarouselComp"
-import { carouselData } from '../CarouselComp/carouselData'
+import Button from "../Button/Button"
+import Carousel from "../Carousel/Carousel-component"
+import { carouselData } from '../Carousel/carousel-data'
 
 const MainLinks = ({ items }) => {
     return(
@@ -16,12 +17,15 @@ const MainLinks = ({ items }) => {
                             alt='stats img'
                         />
                         <Link to={item.path}>
-                            <button className="item-button rounded-2 px-3">{item.buttonTxt}</button>
+                            <Button
+                                buttonStyle='item-button rounded-2 px-3'
+                                children={item.buttonTxt}
+                            />
                         </Link>
                     </li>
                 ))
             }
-            <CarouselComp carouselData={carouselData}  />
+            <Carousel carouselData={carouselData}  />
         </ul>
     )
 }

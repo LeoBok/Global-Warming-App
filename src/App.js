@@ -1,13 +1,13 @@
 import './App.css';
 import Main from './pages/Main/Main'
-import TemperatureAnomalies from './pages/TemperaturePage/Temperature-anomalies'
+import TemperatureAnomalies from './pages/Temperature/Temperature-anomalies'
 import Sidebar from './pages/Sidebar/Sidebar'
 import { HashRouter, Routes, Route } from "react-router-dom";
-import CarbonDioxide from './pages/CarbonDioxPage/Carbon-dioxide';
-import Methan from './pages/MethanPage/Methan';
-import NitrousOxide from './pages/NitrousOxidePage/Nitrous-Oxide';
-import PolarCapsMelting from './pages/PolarCapsPage/Polar-caps-melting';
-import SingleNews from './pages/Global Warming News/SingleNews'
+import CarbonDioxide from './pages/Carbon Dioxide/Carbon-dioxide';
+import Methan from './pages/Methan/Methan';
+import NitrousOxide from './pages/Nitrous Oxide/Nitrous-oxide';
+import PolarCapsMelting from './pages/Polar Caps/Polar-caps-melting';
+import SingleNews from './pages/Global Warming News/Single-news'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 function App() {

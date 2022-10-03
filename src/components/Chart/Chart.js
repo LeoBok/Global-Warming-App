@@ -1,7 +1,7 @@
 import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis, Legend } from "recharts";
 
-
 const Chart = ({ chartData, lineName, yMaxParam, yMinParam }) => {
+
   return (
     <div>
       <ResponsiveContainer width='100%' aspect={2}>
