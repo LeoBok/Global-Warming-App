@@ -13,9 +13,9 @@
 
 ## 📷 Screenshots
 
-![Home Page](src/images/home-screenshot.png "Home Page")
+![Home Page](src/assets/images/home-screenshot.png "Home Page")
 
-![Single Component Exaple](src/images/secondary-screenshot.png "Single Component Example")
+![Single Component Exaple](src/assets/images/secondary-screenshot.png "Single Component Example")
 
 
 ## ⚙ Built With
